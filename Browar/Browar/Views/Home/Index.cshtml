@@ -1,0 +1,90 @@
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="page-header">
+    <h1>Świat Browaru</h1>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Piwa</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="list-unstyled" data-bind="foreach: piwoes">
+                    <li>
+                        <strong><span data-bind="text: Browarnia"></span></strong>: <span data-bind="text: Name"></span>
+                        <small><a href="#" data-bind="click: $parent.getPiwoDetail">Szczegóły</a></small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
+    </div>
+    
+    <!-- ko if:detail() -->
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Szczegóły</h2>
+            </div>
+            <table class="table">
+                <tr><td>Browar</td><td data-bind="text: detail().Browarnia"></td></tr>
+                <tr><td>Nazwa</td><td data-bind="text: detail().Name"></td></tr>
+                <tr><td>Moc</td><td data-bind="text: detail().Power"></td></tr>
+                <tr><td>Gatunek</td><td data-bind="text: detail().Genre"></td></tr>
+                <tr><td>Cena</td><td data-bind="text: detail().Price"></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- /ko -->
+    
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Dodaj Piwo</h2>
+            </div>
+
+            <div class="panel-body">
+                <form class="form-horizontal" data-bind="submit: addPiwo">
+                    <div class="form-group">
+                        <label for="inputBrowarnia" class="col-sm-2 control-label">Browar</label>
+                        <div class="col-sm-10">
+                            <select data-bind="options:browarnias, optionsText: 'Name', value: newPiwo.Browarnia"></select>
+                        </div>
+                    </div>
+
+                    <div class="form-group" data-bind="with: newPiwo">
+                        <label for="inputName" class="col-sm-2 control-label">Nazwa</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" data-bind="value:Name" />
+                        </div>
+
+                        <label for="inputGenre" class="col-sm-2 control-label">Gatunek</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputGenre" data-bind="value:Genre" />
+                        </div>
+
+                        <label for="inputPower" class="col-sm-2 control-label">Moc</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputPower" data-bind="value:Power" />
+                        </div>
+
+                        <label for="inputPrice" class="col-sm-2 control-label">Cena</label>
+                        <div class="col-sm-10">
+                            <input type="number" class="form-control" id="inputPrice" data-bind="value:Price" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-default">Zatwierdź</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+</div>

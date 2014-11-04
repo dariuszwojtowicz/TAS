@@ -1,12 +1,16 @@
 ﻿var ViewModel = function () {
     var self = this;
     self.piwoes = ko.observableArray();
+    self.browarnias = ko.observableArray();
     self.error = ko.observable();
+    self.piwoDetail = ko.observable();
+    self.browarniaDetail = ko.observable();
 
     var piwoesUri = '/api/Piwoes/';
+    var browarniasUri = '/api/Browarnias/';
 
     function ajaxHelper(uri, method, data) {
-        self.error(''); // Clear error message
+        self.error(''); 
         return $.ajax({
             type: method,
             url: uri,
@@ -24,16 +28,25 @@
         });
     }
 
-    self.detail = ko.observable();
-
-    self.getPiwoDetail = function (item) {
-        ajaxHelper(piwoesUri + item.Id, 'GET').done(function (data) {
-            self.detail(data);
+    function getAllBrowarnias() {
+        ajaxHelper(browarniasUri, 'GET').done(function (data) {
+            self.browarnias(data);
         });
     }
 
-    self.browarnias = ko.observableArray();
-    self.newPiwo = {
+   self.getPiwoDetail = function (item) {
+        ajaxHelper(piwoesUri + item.Id, 'GET').done(function (data) {
+            self.piwoDetail(data);
+        });
+   }
+
+   self.getBrowarniaDetail = function (item) {
+       ajaxHelper(browarniasUri + item.Id, 'GET').done(function (data) {
+           self.browarniaDetail(data);
+       });
+   }
+
+   self.newPiwo = {
         Browarnia: ko.observable(),
         Genre: ko.observable(),
         Price: ko.observable(),
@@ -41,15 +54,7 @@
         Power: ko.observable()
     }
 
-    var browarniasUri = '/api/Browarnias/';
-
-    function getBrowarnias() {
-        ajaxHelper(browarniasUri, 'GET').done(function (data) {
-            self.browarnias(data);
-        });
-    }
-
-    self.addPiwo = function (formElement) {
+  self.addPiwo = function (formElement) {
         var piwo = {
             BrowarniaId: self.newPiwo.Browarnia().Id,
             Genre: self.newPiwo.Genre(),
@@ -61,12 +66,25 @@
         ajaxHelper(piwoesUri, 'POST', piwo).done(function (item) {
             self.piwoes.push(item);
         });
-    }
+  }
 
-    getBrowarnias();
+  self.newBrowarnia = {
+      Name: ko.observable(),
+  }
 
-    // Fetch the initial data.
+  self.addBrowarnia = function (formElement) {
+      var browarnia = {
+          Name: self.newBrowarnia.Name(),
+      };
+
+      ajaxHelper(browarniasUri, 'POST', browarnia).done(function (item) {
+          self.browarnias.push(item);
+      });
+  }
+    
+    // Inicjowanie danych.
     getAllPiwoes();
+    getAllBrowarnias();
 };
 
 ko.applyBindings(new ViewModel());

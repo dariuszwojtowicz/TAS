@@ -15,6 +15,7 @@ namespace Browar.Models
         public double Power { get; set; }
         public double Price { get; set; }
         public string Genre { get; set; }
+        public string Img { get; set; }
 
         // Foreign Key
         public int BrowarniaId { get; set; }

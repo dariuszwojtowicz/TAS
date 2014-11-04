@@ -18,23 +18,35 @@ namespace Browar.Controllers
         private BrowarContext db = new BrowarContext();
 
         // GET: api/Browarnias
-        public IQueryable<Browarnia> GetBrowarnias()
+        public IQueryable<BrowarniaDTO> GetBrowarnias()
         {
-            return db.Browarnias;
+            var browarnias = from b in db.Browarnias
+                         select new BrowarniaDTO()
+                         {
+                             Id = b.Id,
+                             Name = b.Name,
+                         };
+
+            return browarnias;
         }
 
         // GET: api/Browarnias/5
-        [ResponseType(typeof(Browarnia))]
+        [ResponseType(typeof(BrowarniaDetailDTO))]
         public async Task<IHttpActionResult> GetBrowarnia(int id)
         {
-            Browarnia browarnia = await db.Browarnias.FindAsync(id);
+            var browarnia = await db.Browarnias.Select(p =>
+                new BrowarniaDetailDTO()
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                }).SingleOrDefaultAsync(p => p.Id == id);
             if (browarnia == null)
             {
                 return NotFound();
             }
 
             return Ok(browarnia);
-        }
+        } 
 
         // PUT: api/Browarnias/5
         [ResponseType(typeof(void))]

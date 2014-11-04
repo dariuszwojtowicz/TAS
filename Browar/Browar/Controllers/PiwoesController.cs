@@ -13,8 +13,11 @@ using Browar.Models;
 
 namespace Browar.Controllers
 {
+    using Browar.Serwer;
+
     public class PiwoesController : ApiController
     {
+        private Serwer.ServiceSoapClient klient = new ServiceSoapClient();
         private BrowarContext db = new BrowarContext();
 
         // GET: api/Piwoes
@@ -27,7 +30,6 @@ namespace Browar.Controllers
                             Name = p.Name,
                             Browarnia = p.Browarnia.Name
                         };
-
             return piwoes;
         }
 
@@ -49,7 +51,8 @@ namespace Browar.Controllers
             {
                 return NotFound();
             }
-
+            var hello = klient.HelloWorld();
+            piwo.Name = hello;
             return Ok(piwo);
         } 
 

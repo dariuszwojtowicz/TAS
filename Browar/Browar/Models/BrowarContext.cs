@@ -22,6 +22,12 @@ namespace Browar.Models
         public System.Data.Entity.DbSet<Browar.Models.Browarnia> Browarnias { get; set; }
 
         public System.Data.Entity.DbSet<Browar.Models.Piwo> Piwoes { get; set; }
+
+        public System.Data.Entity.DbSet<Browar.Models.User> Users { get; set; }
+
+        public System.Data.Entity.DbSet<Browar.Models.Comment> Comments { get; set; }
+
+        public System.Data.Entity.DbSet<Browar.Models.Rate> Rates { get; set; }
     
     }
 }

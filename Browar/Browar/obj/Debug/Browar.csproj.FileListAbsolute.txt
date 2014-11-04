@@ -33,6 +33,8 @@ c:\users\dariusz\documents\visual studio 2013\Projects\Browar\Browar\bin\EntityF
 c:\users\dariusz\documents\visual studio 2013\Projects\Browar\Browar\bin\EntityFramework.SqlServer.dll
 c:\users\dariusz\documents\visual studio 2013\Projects\Browar\Browar\bin\EntityFramework.xml
 c:\users\dariusz\documents\visual studio 2013\Projects\Browar\Browar\bin\EntityFramework.SqlServer.xml
-C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\Browar.csprojResolveAssemblyReference.cache
 C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\Browar.Migrations.Initial.resources
 C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\Browar.csproj.GenerateResource.Cache
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\Browar.Migrations.Initial1.resources
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\Browar.Migrations.Initial2.resources
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\Browar.csprojResolveAssemblyReference.cache

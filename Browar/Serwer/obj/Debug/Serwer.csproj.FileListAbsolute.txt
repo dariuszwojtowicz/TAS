@@ -1,0 +1,5 @@
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\bin\Serwer.dll.config
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\bin\Serwer.dll
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\bin\Serwer.pdb
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\obj\Debug\Serwer.dll
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\obj\Debug\Serwer.pdb

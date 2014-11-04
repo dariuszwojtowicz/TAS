@@ -16,7 +16,7 @@
             <div class="panel-body">
                 <ul class="list-unstyled" data-bind="foreach: piwoes">
                     <li>
-                        <strong><span data-bind="text: Browarnia"></span></strong>: <span data-bind="text: Name"></span>
+                        <strong><span data-bind="text: Id"></span>:<span data-bind="text: Browarnia"></span></strong>: <span data-bind="text: Name"></span>
                         <small><a href="#" data-bind="click: $parent.getPiwoDetail">Szczegóły</a></small>
                     </li>
                 </ul>
@@ -25,7 +25,8 @@
         <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
     </div>
     
-    <!-- ko if:detail() -->
+    
+    <!-- ko if:piwoDetail() -->
 
     <div class="col-md-4">
         <div class="panel panel-default">
@@ -33,18 +34,18 @@
                 <h2 class="panel-title">Szczegóły</h2>
             </div>
             <table class="table">
-                <tr><td>Browar</td><td data-bind="text: detail().Browarnia"></td></tr>
-                <tr><td>Nazwa</td><td data-bind="text: detail().Name"></td></tr>
-                <tr><td>Moc</td><td data-bind="text: detail().Power"></td></tr>
-                <tr><td>Gatunek</td><td data-bind="text: detail().Genre"></td></tr>
-                <tr><td>Cena</td><td data-bind="text: detail().Price"></td></tr>
+                <tr><td>Browar</td><td data-bind="text: piwoDetail().Browarnia"></td></tr>
+                <tr><td>Nazwa</td><td data-bind="text: piwoDetail().Name"></td></tr>
+                <tr><td>Moc</td><td data-bind="text: piwoDetail().Power"></td></tr>
+                <tr><td>Gatunek</td><td data-bind="text: piwoDetail().Genre"></td></tr>
+                <tr><td>Cena</td><td data-bind="text: piwoDetail().Price"></td></tr>
             </table>
         </div>
     </div>
 
     <!-- /ko -->
-    
-    <div class="col-md-4">
+   
+    @*<div class="col-md-4">
         <div class="panel panel-default">
             <div class="panel-heading">
                 <h2 class="panel-title">Dodaj Piwo</h2>
@@ -77,14 +78,71 @@
 
                         <label for="inputPrice" class="col-sm-2 control-label">Cena</label>
                         <div class="col-sm-10">
-                            <input type="number" class="form-control" id="inputPrice" data-bind="value:Price" />
+                            <input type="number" step="0.1" class="form-control" id="inputPrice" data-bind="value:Price" />
                         </div>
                     </div>
                     <button type="submit" class="btn btn-default">Zatwierdź</button>
                 </form>
             </div>
         </div>
+    </div>*@
+      
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Browary</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="list-unstyled" data-bind="foreach: browarnias">
+                    <li>
+                        <strong><span data-bind="text: Id"></span></strong>: <span data-bind="text: Name"></span>
+                        <small><a href="#" data-bind="click: $parent.getBrowarniaDetail">Szczegóły</a></small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
     </div>
 
-    
+
+    <!-- ko if:browarniaDetail() -->
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Szczegóły</h2>
+            </div>
+            <table class="table">
+                <tr><td>Id</td><td data-bind="text: browarniaDetail().Id"></td></tr>
+                <tr><td>Nazwa</td><td data-bind="text: browarniaDetail().Name"></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- /ko -->
+
+    @*<div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Dodaj Browar</h2>
+            </div>
+
+            <div class="panel-body">
+                <form class="form-horizontal" data-bind="submit: addBrowarnia">
+                    <div class="form-group" data-bind="with: newBrowarnia">
+                        <label for="inputName" class="col-sm-2 control-label">Nazwa</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="inputName" data-bind="value:Name" />
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-default">Zatwierdź</button>
+                </form>
+            </div>
+        </div>
+    </div>*@
+
 </div>

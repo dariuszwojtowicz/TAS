@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 
-namespace Browar.Models
+namespace Serwer.DTO
 {
     public class PiwoDetailDTO
     {

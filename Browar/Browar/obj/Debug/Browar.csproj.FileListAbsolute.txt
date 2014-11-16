@@ -38,3 +38,43 @@ C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\B
 C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\Browar.Migrations.Initial1.resources
 C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\Browar.Migrations.Initial2.resources
 C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Browar\obj\Debug\Browar.csprojResolveAssemblyReference.cache
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\Browar.dll.config
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\Browar.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\Browar.pdb
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\Antlr3.Runtime.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\EntityFramework.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\EntityFramework.SqlServer.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\Microsoft.Web.Infrastructure.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\Newtonsoft.Json.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Net.Http.Formatting.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Helpers.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Http.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Http.WebHost.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Mvc.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Optimization.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Razor.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.WebPages.Deployment.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.WebPages.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.WebPages.Razor.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\WebGrease.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\EntityFramework.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\EntityFramework.SqlServer.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\Newtonsoft.Json.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Net.Http.Formatting.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Helpers.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Http.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Http.WebHost.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Mvc.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Optimization.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.Razor.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.WebPages.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.WebPages.Deployment.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\System.Web.WebPages.Razor.xml
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\bin\Antlr3.Runtime.pdb
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\obj\Debug\Browar.csprojResolveAssemblyReference.cache
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\obj\Debug\Browar.Migrations.Initial.resources
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\obj\Debug\Browar.Migrations.Initial1.resources
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\obj\Debug\Browar.Migrations.Initial2.resources
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\obj\Debug\Browar.csproj.GenerateResource.Cache
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\obj\Debug\Browar.dll
+D:\UAM - repozytoria\TAS - repo\TAS\Browar\Browar\obj\Debug\Browar.pdb

@@ -18,6 +18,12 @@ namespace Serwer
     // [System.Web.Script.Services.ScriptService]
     public class Service : System.Web.Services.WebService
     {
+        private  DatabaseHelper DBHelper;
+
+        public Service()
+        {
+            DBHelper = new DatabaseHelper();
+        }
 
         [WebMethod]
         public string HelloWorld()
@@ -28,50 +34,60 @@ namespace Serwer
         //Metoda wyciąga z tabeli Piwoes wiersz o danym ID i zwraca go w postaci PiwoDTO
         //Dodatkowo uzywamy metody policzOcene() do wyliczenia na podstawie danych z bazy sredniej oceny dla naszego piwa i wsadzenie jej do piwo.rate
         [WebMethod]
-        public PiwoDetailDTO GetPiwo(int id)
+        public PiwoDetailDTO GetBeer(int id)
         {
-            /*Wyciągam z bazy wiersz
-             * Tworzę obiekt, PiwoDTO piwo = new PiwoDTO();
-             * I potem odpowiednie wartości przypisujemy.
-             * np. piwo.Name = wiersz.Name   czy jakoś tak
-            return piwo;*/
-            return new PiwoDetailDTO();
+            PiwoDetailDTO beer = DBHelper.getBeerWithId(id);
+
+            return beer;
         }
 
         //Metoda zwraca wszystkie wiersze z tabeli Piwoes w postaci listy PiwoDTO
         //Dodatkowo uzywamy metody policzOcene() do wyliczenia na podstawie danych z bazy sredniej oceny dla nkazdego piwa i wsadzenie jej do piwo.rate każdego z piw
         [WebMethod]
-        public List<PiwoDetailDTO> GetPiwoes()
+        public List<PiwoDTO> GetBeers()
         {
-            return new List<PiwoDetailDTO>();
+            List<PiwoDTO> beers = DBHelper.getBeers();
+            return beers;
         }
 
         //Kasuje piwo o danym id i zwraca true albo false czy coś, żeby było wiadomo czy się udało czy nie
         [WebMethod]
         public bool DeletePiwo(int id)
         {
-            return true;
+            if(DBHelper.deleteBeer(id))
+            {
+                return true;
+            }
+            return false;
         }
 
         //Przyjmuje PiwoDTO i updateje wiersz o danym id wsadzajac dane  hasha, zwraca true false
         [WebMethod]
         public bool UpdatePiwo(PiwoDetailDTO piwo)
         {
-            return true;
+            if(DBHelper.updateBeer(piwo))
+            {
+                return true;
+            }
+            return false;
         }
 
         //Wsadza do bazy wiersz z danymi z PiwoDTO, zwraca true/false
         [WebMethod]
         public bool InsertPiwo(PiwoDetailDTO piwo)
         {
-            return true;
+            if(DBHelper.addBeer(piwo))
+            {
+                return true;
+            }
+            return false;
         }
 
         //Wyciaga z bazy srednia ocene dla danego piwa
         [WebMethod]
-        public  double PoliczOcene(int id)
+        public double PoliczOcene(int id)
         {
-            return new double();
+            return DBHelper.getAverageRate(id);
         }
 
         //Analogiczne metody, ale nie wszystkie dla User, Comment, Rate, Browarnia

@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="HelloWorld">
+        <s:complexType />
+      </s:element>
+      <s:element name="HelloWorldResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="HelloWorldResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBeer">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetBeerResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBeerResult" type="tns:PiwoDetailDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="PiwoDetailDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Browarnia" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Price" type="s:double" />
+          <s:element minOccurs="1" maxOccurs="1" name="Power" type="s:double" />
+          <s:element minOccurs="0" maxOccurs="1" name="Genre" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Rate" type="s:double" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetBeers">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetBeersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetBeersResult" type="tns:ArrayOfPiwoDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfPiwoDTO">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="PiwoDTO" nillable="true" type="tns:PiwoDTO" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="PiwoDTO">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="Id" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Browarnia" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="DeletePiwo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeletePiwoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="DeletePiwoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePiwo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="piwo" type="tns:PiwoDetailDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdatePiwoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="UpdatePiwoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPiwo">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="piwo" type="tns:PiwoDetailDTO" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertPiwoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="InsertPiwoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PoliczOcene">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="PoliczOceneResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="PoliczOceneResult" type="s:double" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="HelloWorldSoapIn">
+    <wsdl:part name="parameters" element="tns:HelloWorld" />
+  </wsdl:message>
+  <wsdl:message name="HelloWorldSoapOut">
+    <wsdl:part name="parameters" element="tns:HelloWorldResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBeerSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBeer" />
+  </wsdl:message>
+  <wsdl:message name="GetBeerSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBeerResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetBeersSoapIn">
+    <wsdl:part name="parameters" element="tns:GetBeers" />
+  </wsdl:message>
+  <wsdl:message name="GetBeersSoapOut">
+    <wsdl:part name="parameters" element="tns:GetBeersResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeletePiwoSoapIn">
+    <wsdl:part name="parameters" element="tns:DeletePiwo" />
+  </wsdl:message>
+  <wsdl:message name="DeletePiwoSoapOut">
+    <wsdl:part name="parameters" element="tns:DeletePiwoResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePiwoSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdatePiwo" />
+  </wsdl:message>
+  <wsdl:message name="UpdatePiwoSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdatePiwoResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertPiwoSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertPiwo" />
+  </wsdl:message>
+  <wsdl:message name="InsertPiwoSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertPiwoResponse" />
+  </wsdl:message>
+  <wsdl:message name="PoliczOceneSoapIn">
+    <wsdl:part name="parameters" element="tns:PoliczOcene" />
+  </wsdl:message>
+  <wsdl:message name="PoliczOceneSoapOut">
+    <wsdl:part name="parameters" element="tns:PoliczOceneResponse" />
+  </wsdl:message>
+  <wsdl:portType name="ServiceSoap">
+    <wsdl:operation name="HelloWorld">
+      <wsdl:input message="tns:HelloWorldSoapIn" />
+      <wsdl:output message="tns:HelloWorldSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBeer">
+      <wsdl:input message="tns:GetBeerSoapIn" />
+      <wsdl:output message="tns:GetBeerSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetBeers">
+      <wsdl:input message="tns:GetBeersSoapIn" />
+      <wsdl:output message="tns:GetBeersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeletePiwo">
+      <wsdl:input message="tns:DeletePiwoSoapIn" />
+      <wsdl:output message="tns:DeletePiwoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePiwo">
+      <wsdl:input message="tns:UpdatePiwoSoapIn" />
+      <wsdl:output message="tns:UpdatePiwoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertPiwo">
+      <wsdl:input message="tns:InsertPiwoSoapIn" />
+      <wsdl:output message="tns:InsertPiwoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="PoliczOcene">
+      <wsdl:input message="tns:PoliczOceneSoapIn" />
+      <wsdl:output message="tns:PoliczOceneSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="ServiceSoap" type="tns:ServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeer">
+      <soap:operation soapAction="http://tempuri.org/GetBeer" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeers">
+      <soap:operation soapAction="http://tempuri.org/GetBeers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePiwo">
+      <soap:operation soapAction="http://tempuri.org/DeletePiwo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePiwo">
+      <soap:operation soapAction="http://tempuri.org/UpdatePiwo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPiwo">
+      <soap:operation soapAction="http://tempuri.org/InsertPiwo" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PoliczOcene">
+      <soap:operation soapAction="http://tempuri.org/PoliczOcene" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="ServiceSoap12" type="tns:ServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="HelloWorld">
+      <soap12:operation soapAction="http://tempuri.org/HelloWorld" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeer">
+      <soap12:operation soapAction="http://tempuri.org/GetBeer" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetBeers">
+      <soap12:operation soapAction="http://tempuri.org/GetBeers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeletePiwo">
+      <soap12:operation soapAction="http://tempuri.org/DeletePiwo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdatePiwo">
+      <soap12:operation soapAction="http://tempuri.org/UpdatePiwo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertPiwo">
+      <soap12:operation soapAction="http://tempuri.org/InsertPiwo" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="PoliczOcene">
+      <soap12:operation soapAction="http://tempuri.org/PoliczOcene" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Service">
+    <wsdl:port name="ServiceSoap" binding="tns:ServiceSoap">
+      <soap:address location="http://localhost:1344/Service.asmx" />
+    </wsdl:port>
+    <wsdl:port name="ServiceSoap12" binding="tns:ServiceSoap12">
+      <soap12:address location="http://localhost:1344/Service.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

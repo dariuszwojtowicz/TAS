@@ -1,0 +1,47 @@
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="page-header">
+    <h1>Świat Browaru - Katalog piw</h1>
+</div>
+
+<div class="row">
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Piwa</h2>
+            </div>
+            <div class="panel-body">
+                <ul class="list-unstyled" data-bind="foreach: piwoes">
+                    <li>
+                        <strong><span data-bind="text: Id"></span>:<span data-bind="text: Browarnia"></span></strong>: <span data-bind="text: Name"></span>
+                        <small><a href="#" data-bind="click: $parent.getPiwoDetail">Szczegóły</a></small>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="alert alert-danger" data-bind="visible: error"><p data-bind="text: error"></p></div>
+    </div>
+
+
+    <!-- ko if:piwoDetail() -->
+
+    <div class="col-md-4">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <h2 class="panel-title">Szczegóły</h2>
+            </div>
+            <table class="table">
+                <tr><td>Browar</td><td data-bind="text: piwoDetail().Browarnia"></td></tr>
+                <tr><td>Nazwa</td><td data-bind="text: piwoDetail().Name"></td></tr>
+                <tr><td>Moc</td><td data-bind="text: piwoDetail().Power"></td></tr>
+                <tr><td>Gatunek</td><td data-bind="text: piwoDetail().Genre"></td></tr>
+                <tr><td>Cena</td><td data-bind="text: piwoDetail().Price"></td></tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- /ko -->
+</div>

@@ -1,0 +1,11 @@
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="row">
+    <br />
+    <button type="submit" class="log_rej">@Html.ActionLink("Logowanie", "Index", "Logowanie", new { area = "" }, null)</button><br />
+    <br />
+    <button type="submit" class="log_rej">@Html.ActionLink("Rejestracja", "Index", "Rejestracja", new { area = ""}, null)</button>
+</div>
+

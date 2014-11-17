@@ -1,0 +1,54 @@
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="page-header">
+    <h1>Świat Browaru - Rejestracja</h1>
+</div>
+
+<div class="row">
+
+    <center>
+        <div style="width: 45%;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Rejestracja</h2>
+                </div>
+
+                <div class="panel-body">
+                    <form class="form-horizontal" data-bind="submit: addBrowarnia">
+                        <div class="form-group" data-bind="with: newBrowarnia">
+                            <label for="inputName" class="col-sm-2 control-label">Login</label>
+                            <div style="margin-bottom: 10px">
+                                <input type="text" class="form-control" id="inputLogin" data-bind="value:Login" />
+                            </div>
+                            <label for="inputName" class="col-sm-2 control-label">Imię</label>
+                            <div style="margin-bottom: 10px">
+                                <input type="text" class="form-control" id="inputName" data-bind="value:Name" />
+                            </div>
+                            <label for="inputName" class="col-sm-2 control-label">E-mail</label>
+                            <div style="margin-bottom: 10px">
+                                <input type="text" class="form-control" id="inputMail" data-bind="value:Mail" />
+                            </div>
+                            <label for="inputName" class="col-sm-2 control-label">Wiek</label>
+                            <div style="margin-bottom: 10px">
+                                <input type="text" class="form-control" id="inputAge" data-bind="value:Age" />
+                            </div>
+                            <label for="inputName" class="col-sm-2 control-label">Hasło</label>
+                            <div style="margin-bottom: 10px">
+                                <input type="text" class="form-control" id="inputPassword" data-bind="value:Password" />
+                            </div>
+                            <label for="inputName" class="col-sm-2 control-label">Potwierdź hasło</label>
+                            <div style="margin-bottom: 10px">
+                                <input type="text" class="form-control" id="inputPassword2" />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default">Zarejestruj</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </center>
+ 
+</div>
+

@@ -1,0 +1,38 @@
+﻿@section scripts {
+    @Scripts.Render("~/bundles/app")
+}
+
+<div class="page-header">
+    <h1>Świat Browaru - Logowanie</h1>
+</div>
+
+<div class="row">
+
+    <center>
+        <div style="width: 30%;">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <h2 class="panel-title">Logowanie</h2>
+                </div>
+
+                <div class="panel-body">
+                    <form class="form-horizontal" data-bind="submit: addBrowarnia">
+                        <div class="form-group" data-bind="with: newBrowarnia">
+                            <label for="inputName" class="col-sm-2 control-label">Login</label>
+                            <div style="margin-bottom: 10px">
+                                <input type="text" class="form-control" id="inputName" data-bind="value:Login" />
+                            </div>
+                            <label for="inputName" class="col-sm-2 control-label">Hasło</label>
+                            <div style="margin-bottom: 10px">
+                                <input type="text" class="form-control" id="inputName" data-bind="value:Password" />
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-default">Zaloguj</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </center>
+   
+</div>
+

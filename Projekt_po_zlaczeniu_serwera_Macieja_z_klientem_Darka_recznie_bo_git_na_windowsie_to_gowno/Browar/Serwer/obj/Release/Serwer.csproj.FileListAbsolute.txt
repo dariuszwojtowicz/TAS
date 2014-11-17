@@ -1,0 +1,6 @@
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\bin\Serwer.dll.config
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\bin\Serwer.dll
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\bin\Serwer.pdb
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\obj\Release\Serwer.dll
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\obj\Release\Serwer.pdb
+C:\Users\Dariusz\documents\visual studio 2013\Projects\Browar\Serwer\obj\Release\Serwer.csprojResolveAssemblyReference.cache
